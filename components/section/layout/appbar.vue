@@ -1,8 +1,8 @@
 <template>
 <div>
     <v-app-bar color="secondary" app dense dark extended class="pt-2" extension-height="20">
-        <v-img :src="require('~/assets/images/logo/gurkha.png')" max-width="70px" height="60px" background="secondary"></v-img>
-        <span class="text-h2 link white--text" @click="$router.push({path: '/home'})"><b>Gurkha Finance</b></span>
+        <v-img :src="require('~/assets/images/logo/gurkha.png')" max-width="70px" height="60px" @click="$router.push({path: '/home'})"></v-img>
+        <span class="text--lg-h3 text-md-h4 text-sm-h5 link white--text"><b>Gurkha Finance</b></span>
         <v-spacer></v-spacer>
         <span class="menu-hover mx-2 link" :class="activeHome()" @click="$router.push({path: '/home'})">Home</span>
         <span class="menu-hover mx-2 link" :class="activeExchange()" @click="$router.push({path: '/currencyExchange'})">Currency Exchange</span>
@@ -15,7 +15,7 @@
             <span class="mx-2">Admin</span>
         </p>
         <v-avatar class="profile-avatar link" size="60" @click="login = true">
-            <v-icon>mdi-account</v-icon>
+            <v-img :src="require('~/assets/images/pashu.jpg')"></v-img>
         </v-avatar>
     </v-app-bar>
     <v-dialog v-model="login" max-width="400">
@@ -43,7 +43,7 @@
                     </v-form>
                     <v-form v-else v-model="valid" ref="form">
                         <v-text-field dense outlined label="Email"></v-text-field>
-                        <v-text-field dense outlined label="Password"></v-text-field>
+                        <v-text-field dense outlined label="Password" type="password"></v-text-field>
                         <v-btn color="secondary"><span class="white--text">Login</span></v-btn><br>
                         <!-- <small>Forgot Password</small> -->
 
@@ -60,6 +60,11 @@
             </v-col>
         </v-card>
     </v-dialog>
+    <v-dialog v-model="imageDialog" max-width="600" max-height="600">
+        <v-card>
+            <v-img :src="require('~/assets/images/pashu.jpg')"></v-img>
+        </v-card>
+    </v-dialog>
 </div>
 </template>
 
@@ -67,6 +72,7 @@
 export default {
     data() {
         return {
+            imageDialog: false,
             login: false,
             valid: true,
             selected: 0
@@ -111,7 +117,7 @@ export default {
     padding: 5px 15px;
     border-radius: 4px;
     border: 1px solid grey;
-    background-color: #3bac76 !important;
+    background-color: #607D8B !important;
     color: white !important;
     transition: 0.5s;
 }
@@ -120,7 +126,7 @@ export default {
     padding: 5px 15px;
     border-radius: 4px;
     border: 1px solid grey;
-    background-color: #58b889 !important;
+    background-color: #CFD8DC !important;
     color: white !important;
     transition: 0.5s;
 }

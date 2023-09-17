@@ -49,8 +49,8 @@ export default {
       light: true,
       themes: {
         light: {
-          primary: "#9E9E9E",
-          secondary: "#f3740b",
+          primary: "#607D8B",
+          secondary: "#03A9F4",
         }
       }
     }
