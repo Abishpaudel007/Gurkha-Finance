@@ -11,11 +11,11 @@
         <span class="menu-hover mx-2 link" :class="activeAbout()" @click="$router.push({path: '/about'})">About</span>
 
         <p class="text-right mt-4 ml-10">
-            <span class="mx-2">Pashupati Chaudhary</span> <br>
+            <span class="mx-2">Abish Paudel</span> <br>
             <span class="mx-2">Admin</span>
         </p>
         <v-avatar class="profile-avatar link" size="60" @click="login = true">
-            <v-img :src="require('~/assets/images/pashu.jpg')"></v-img>
+            <v-img :src="require('~/assets/images/abish.jpg')"></v-img>
         </v-avatar>
     </v-app-bar>
     <v-dialog v-model="login" max-width="400">
